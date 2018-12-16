@@ -1,4 +1,4 @@
-package me.cmulugeta.airlinesbook.test.injection
+package me.cmulugeta.airlinesbook.injection
 
 import android.app.Application
 import android.content.Context

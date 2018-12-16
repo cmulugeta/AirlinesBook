@@ -1,4 +1,4 @@
-package me.cmulugeta.airlinesbook.test.injection
+package me.cmulugeta.airlinesbook.injection
 
 import com.nhaarman.mockito_kotlin.mock
 import dagger.Module

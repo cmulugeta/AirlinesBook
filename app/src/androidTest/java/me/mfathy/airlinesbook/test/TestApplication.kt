@@ -6,7 +6,7 @@ import androidx.test.InstrumentationRegistry
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
-import me.cmulugeta.airlinesbook.test.injection.TestApplicationComponent
+import me.cmulugeta.airlinesbook.injection.TestApplicationComponent
 import javax.inject.Inject
 
 /**
