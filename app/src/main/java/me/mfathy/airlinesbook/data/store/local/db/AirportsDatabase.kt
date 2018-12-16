@@ -10,7 +10,6 @@ import me.cmulugeta.airlinesbook.data.store.local.dao.CachedAirportsDao
 import me.cmulugeta.airlinesbook.data.store.local.models.CacheConfig
 import me.cmulugeta.airlinesbook.data.store.local.models.CachedAccessToken
 import me.cmulugeta.airlinesbook.data.store.local.models.CachedAirport
-import javax.inject.Inject
 
 @Database(entities = [CachedAccessToken::class, CachedAirport::class, CacheConfig::class], version = 1)
 abstract class AirportsDatabase : RoomDatabase() {

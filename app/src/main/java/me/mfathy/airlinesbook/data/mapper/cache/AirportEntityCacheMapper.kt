@@ -3,12 +3,13 @@ package me.cmulugeta.airlinesbook.data.mapper.cache
 import me.cmulugeta.airlinesbook.data.mapper.EntityMapper
 import me.cmulugeta.airlinesbook.data.model.AirportEntity
 import me.cmulugeta.airlinesbook.data.store.local.models.CachedAirport
+import javax.inject.Inject
 
 /**
  * Created by Mohammed Fathy on 15/12/2018.
  * dev.cmulugeta@gmail.com
  */
-class AirportEntityCacheMapper : EntityMapper<AirportEntity, CachedAirport> {
+class AirportEntityCacheMapper @Inject constructor() : EntityMapper<AirportEntity, CachedAirport> {
 
     override fun mapFromEntity(entity: AirportEntity): CachedAirport {
         return CachedAirport(
