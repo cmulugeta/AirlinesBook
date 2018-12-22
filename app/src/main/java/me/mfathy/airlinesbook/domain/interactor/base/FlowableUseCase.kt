@@ -1,10 +1,11 @@
-package me.cmulugeta.airlinesbook.domain.interactor
+package me.cmulugeta.airlinesbook.domain.interactor.base
 
 import io.reactivex.Flowable
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.subscribers.DisposableSubscriber
 import me.cmulugeta.airlinesbook.domain.executor.ExecutionThread
+import me.cmulugeta.airlinesbook.domain.executor.SubscribeThread
 
 /**
  * FlowableUseCase is is an abstract class which provide a Flowable observable to
@@ -13,7 +14,7 @@ import me.cmulugeta.airlinesbook.domain.executor.ExecutionThread
  * This observable support backpressure.
  */
 abstract class FlowableUseCase<T, in Params> constructor(
-        private val subscriberThread: ExecutionThread,
+        private val subscriberThread: SubscribeThread,
         private val postExecutionThread: ExecutionThread) {
 
     private val disposables = CompositeDisposable()

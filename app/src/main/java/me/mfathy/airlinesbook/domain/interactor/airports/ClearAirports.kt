@@ -1,9 +1,10 @@
-package me.cmulugeta.airlinesbook.domain.airports
+package me.cmulugeta.airlinesbook.domain.interactor.airports
 
 import io.reactivex.Completable
 import me.cmulugeta.airlinesbook.data.repository.AirportsRepository
 import me.cmulugeta.airlinesbook.domain.executor.ExecutionThread
-import me.cmulugeta.airlinesbook.domain.interactor.CompletableUseCase
+import me.cmulugeta.airlinesbook.domain.executor.SubscribeThread
+import me.cmulugeta.airlinesbook.domain.interactor.base.CompletableUseCase
 import javax.inject.Inject
 
 /**
@@ -14,8 +15,8 @@ import javax.inject.Inject
  */
 open class ClearAirports @Inject constructor(
         private val dataRepository: AirportsRepository,
-        subscriberThread: ExecutionThread,
-        postExecutionThread: ExecutionThread)
+        val subscriberThread: SubscribeThread,
+        val postExecutionThread: ExecutionThread)
     : CompletableUseCase<ClearAirports.Params>(subscriberThread, postExecutionThread) {
     public override fun buildUseCaseCompletable(params: Params?): Completable {
         return dataRepository.clearAirports()

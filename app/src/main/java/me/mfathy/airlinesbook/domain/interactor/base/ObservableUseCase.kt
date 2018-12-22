@@ -1,17 +1,18 @@
-package me.cmulugeta.airlinesbook.domain.interactor
+package me.cmulugeta.airlinesbook.domain.interactor.base
 
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.observers.DisposableObserver
 import me.cmulugeta.airlinesbook.domain.executor.ExecutionThread
+import me.cmulugeta.airlinesbook.domain.executor.SubscribeThread
 
 /**
  * ObservableUseCase is is an abstract class which provide a Observable observable to
  * emit required data or error.
  */
 abstract class ObservableUseCase<T, in Params> constructor(
-        private val subscriberThread: ExecutionThread,
+        private val subscriberThread: SubscribeThread,
         private val postExecutionThread: ExecutionThread) {
 
     private val disposables = CompositeDisposable()
