@@ -5,7 +5,11 @@ import androidx.lifecycle.ViewModelProvider
 import dagger.Binds
 import dagger.MapKey
 import dagger.Module
+import dagger.multibindings.IntoMap
 import me.cmulugeta.airlinesbook.injection.ViewModelFactory
+import me.cmulugeta.airlinesbook.ui.details.FlightDetailsViewModel
+import me.cmulugeta.airlinesbook.ui.search.SearchViewModel
+import me.cmulugeta.airlinesbook.ui.select.SelectionViewModel
 import kotlin.reflect.KClass
 
 /**
@@ -13,6 +17,21 @@ import kotlin.reflect.KClass
  */
 @Module
 abstract class ViewModelsModule {
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(SearchViewModel::class)
+    abstract fun bindSearchViewModel(viewModel: SearchViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(SelectionViewModel::class)
+    abstract fun bindSelectionViewModel(viewModel: SelectionViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(FlightDetailsViewModel::class)
+    abstract fun bindFlightDetailsViewModel(viewModel: FlightDetailsViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

@@ -6,6 +6,7 @@ import androidx.test.InstrumentationRegistry
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
+import me.cmulugeta.airlinesbook.injection.DaggerTestApplicationComponent
 import me.cmulugeta.airlinesbook.injection.TestApplicationComponent
 import javax.inject.Inject
 
@@ -14,7 +15,7 @@ import javax.inject.Inject
  * dev.cmulugeta@gmail.com
  * Testing application class used to provide context and dagger modules for tests.
  */
-class TestApplication: Application(), HasActivityInjector {
+class TestApplication : Application(), HasActivityInjector {
 
     @Inject
     lateinit var injector: DispatchingAndroidInjector<Activity>

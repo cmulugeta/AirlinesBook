@@ -11,96 +11,98 @@ import me.cmulugeta.airlinesbook.data.store.remote.model.*
 /**
  * Created by Mohammed Fathy on 15/12/2018.
  * dev.cmulugeta@gmail.com
+ *
+ * Factory which will handle generating dummy data.
  */
-object AirportFactory {
+object AirportTestFactory {
     fun makeAirportEntity(): AirportEntity {
         return AirportEntity(
-                DataFactory.randomString(),
-                DataFactory.randomString(),
-                DataFactory.randomLong().toDouble(),
-                DataFactory.randomLong().toDouble(),
-                DataFactory.randomString(),
-                DataFactory.randomString(),
-                DataFactory.randomString()
+                RandomFactory.randomString(),
+                RandomFactory.randomString(),
+                RandomFactory.randomLong().toDouble(),
+                RandomFactory.randomLong().toDouble(),
+                RandomFactory.randomString(),
+                RandomFactory.randomString(),
+                RandomFactory.randomString()
         )
     }
 
     fun makeScheduleEntity(): ScheduleEntity {
         return ScheduleEntity(
-                DataFactory.randomString(),
+                RandomFactory.randomString(),
                 listOf(makeFlightEntity())
         )
     }
 
     fun makeFlightEntity(): FlightEntity {
         return FlightEntity(
-                Pair(first = DataFactory.randomString(), second = makeAirportEntity()),
-                Pair(first = DataFactory.randomString(), second = makeAirportEntity()),
-                DataFactory.randomInt(),
-                DataFactory.randomString()
+                Pair(first = RandomFactory.randomString(), second = makeAirportEntity()),
+                Pair(first = RandomFactory.randomString(), second = makeAirportEntity()),
+                RandomFactory.randomInt(),
+                RandomFactory.randomString()
         )
     }
 
     fun makeAccessTokenEntity(): AccessTokenEntity {
         return AccessTokenEntity(
-                DataFactory.randomString(),
-                DataFactory.randomString(),
-                DataFactory.randomString(),
-                DataFactory.randomInt().toLong()
+                RandomFactory.randomString(),
+                RandomFactory.randomString(),
+                RandomFactory.randomString(),
+                RandomFactory.randomInt().toLong()
         )
     }
 
     fun makeCachedAirport(): CachedAirport {
         return CachedAirport(
-                DataFactory.randomString(),
-                DataFactory.randomString(),
-                DataFactory.randomLong().toDouble(),
-                DataFactory.randomLong().toDouble(),
-                DataFactory.randomString(),
-                DataFactory.randomString(),
-                DataFactory.randomString()
+                RandomFactory.randomString(),
+                RandomFactory.randomString(),
+                RandomFactory.randomLong().toDouble(),
+                RandomFactory.randomLong().toDouble(),
+                RandomFactory.randomString(),
+                RandomFactory.randomString(),
+                RandomFactory.randomString()
         )
     }
 
     fun makeAccessToken(): AccessToken {
         return AccessToken(
-                DataFactory.randomString(),
-                DataFactory.randomString(),
-                DataFactory.randomString(),
-                DataFactory.randomInt().toLong()
+                RandomFactory.randomString(),
+                RandomFactory.randomString(),
+                RandomFactory.randomString(),
+                RandomFactory.randomInt().toLong()
         )
     }
 
     fun makeAirport(): Airport {
         return Airport(
-                DataFactory.randomString(),
+                RandomFactory.randomString(),
                 Names(name = Name(
-                        DataFactory.randomString(),
-                        DataFactory.randomString()
+                        RandomFactory.randomString(),
+                        RandomFactory.randomString()
                 )),
-                DataFactory.randomString(),
-                Position(Coordinate(DataFactory.randomLong().toDouble(), DataFactory.randomLong().toDouble())),
-                DataFactory.randomString(),
-                DataFactory.randomString()
+                RandomFactory.randomString(),
+                Position(Coordinate(RandomFactory.randomLong().toDouble(), RandomFactory.randomLong().toDouble())),
+                RandomFactory.randomString(),
+                RandomFactory.randomString()
         )
     }
 
     fun makeFlightItem(): FlightItem {
         return FlightItem(
                 departure = Departure(
-                        airportCode = DataFactory.randomString(),
-                        scheduledTimeLocal = ScheduledTimeLocal(DataFactory.randomString()),
+                        airportCode = RandomFactory.randomString(),
+                        scheduledTimeLocal = ScheduledTimeLocal(RandomFactory.randomString()),
                         terminal = Terminal("0")),
-                marketingCarrier = MarketingCarrier(airlineID = DataFactory.randomString()),
+                marketingCarrier = MarketingCarrier(airlineID = RandomFactory.randomString()),
                 arrival = Arrival(
-                        airportCode = DataFactory.randomString(),
-                        scheduledTimeLocal = ScheduledTimeLocal(DataFactory.randomString()),
+                        airportCode = RandomFactory.randomString(),
+                        scheduledTimeLocal = ScheduledTimeLocal(RandomFactory.randomString()),
                         terminal = Terminal("0"))
         )
     }
 
     fun makeSchedule(): Schedule {
-        return Schedule(listOf(makeFlightItem()), TotalJourney(DataFactory.randomString()))
+        return Schedule(listOf(makeFlightItem()), TotalJourney(RandomFactory.randomString()))
     }
 
     fun makeCacheConfig(): CacheConfig {

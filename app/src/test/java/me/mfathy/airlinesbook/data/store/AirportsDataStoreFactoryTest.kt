@@ -5,15 +5,15 @@ import me.cmulugeta.airlinesbook.data.store.local.AirportsCacheDataStore
 import me.cmulugeta.airlinesbook.data.store.remote.AirportsRemoteDataStore
 import org.junit.Test
 
-import org.junit.Assert.*
-
 /**
  * Created by Mohammed Fathy on 16/12/2018.
  * dev.cmulugeta@gmail.com
+ *
+ * Unit test for AirportsDataStoreFactory
  */
 class AirportsDataStoreFactoryTest {
 
-    private val mockCacheStore =  mock<AirportsCacheDataStore>()
+    private val mockCacheStore = mock<AirportsCacheDataStore>()
     private val mockRemoteStore = mock<AirportsRemoteDataStore>()
     private val factory = AirportsDataStoreFactory(
             mockCacheStore,
