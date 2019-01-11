@@ -1,6 +1,5 @@
 package me.cmulugeta.airlinesbook.data.mapper.cache
 
-import me.cmulugeta.airlinesbook.data.mapper.EntityMapper
 import me.cmulugeta.airlinesbook.data.model.AirportEntity
 import me.cmulugeta.airlinesbook.data.store.local.models.CachedAirport
 import javax.inject.Inject
@@ -11,7 +10,7 @@ import javax.inject.Inject
  *
  * A helper class to map AirportEntity to/from CachedAirport
  */
-class AirportEntityCacheMapper @Inject constructor() : EntityMapper<AirportEntity, CachedAirport> {
+class AirportEntityCacheMapper @Inject constructor() : CacheEntityMapper<AirportEntity, CachedAirport> {
 
     override fun mapFromEntity(entity: AirportEntity): CachedAirport {
         return CachedAirport(
