@@ -7,6 +7,10 @@ import me.cmulugeta.airlinesbook.data.model.ScheduleEntity
 import me.cmulugeta.airlinesbook.data.store.local.models.CacheConfig
 import me.cmulugeta.airlinesbook.data.store.local.models.CachedAirport
 import me.cmulugeta.airlinesbook.data.store.remote.model.*
+import me.cmulugeta.airlinesbook.domain.interactor.airports.GetAirports
+import me.cmulugeta.airlinesbook.domain.interactor.schedules.GetFlightSchedules
+import me.cmulugeta.airlinesbook.domain.interactor.schedules.GetScheduleFlightDetails
+import me.cmulugeta.airlinesbook.domain.interactor.token.GetAccessToken
 
 /**
  * Created by Mohammed Fathy on 15/12/2018.
@@ -121,5 +125,27 @@ object AirportFactory {
 
     fun makeFlightSchedulesResponseString(): String {
         return "{\"ScheduleResource\": {\"Schedule\": [{\"TotalJourney\": {\"Duration\": \"P2\"}},{\"TotalJourney\": {\"Duration\": \"P2\"}}]}}"
+    }
+
+    fun makeAccessTokenParams(): GetAccessToken.Params {
+        return GetAccessToken.Params(
+                DataFactory.randomString(),
+                DataFactory.randomString(),
+                DataFactory.randomString()
+        )
+    }
+
+    fun makeGetAirportParams() = GetAirports.Params("en", 2, 1)
+
+    fun makeGetFlightSchedulesParams() =
+            GetFlightSchedules.Params("CAI", "RUH", "2019-01-01", 10, 1)
+
+    fun makeGetScheduleFlightDetailsParams(): GetScheduleFlightDetails.Params {
+        return GetScheduleFlightDetails.Params(
+                listOf(),
+                DataFactory.randomString(),
+                DataFactory.randomInt(),
+                DataFactory.randomInt()
+        )
     }
 }
