@@ -1,10 +1,10 @@
 package me.cmulugeta.airlinesbook.domain.interactor.airports
 
 import io.reactivex.Completable
+import me.cmulugeta.airlinesbook.ImmediateSchedulerRuleUnitTests
 import me.cmulugeta.airlinesbook.data.repository.AirportsRepository
-import me.cmulugeta.airlinesbook.domain.executor.ExecutionThread
-import me.cmulugeta.airlinesbook.domain.executor.SubscribeThread
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
@@ -22,20 +22,19 @@ import org.mockito.junit.MockitoJUnitRunner
 @RunWith(MockitoJUnitRunner::class)
 class ClearAirportsTest {
 
+    @JvmField
+    @Rule
+    val immediateSchedulerRule = ImmediateSchedulerRuleUnitTests()
+
     private lateinit var mClearAirports: ClearAirports
 
     @Mock
     lateinit var mockDataRepository: AirportsRepository
-    @Mock
-    lateinit var mockExecutionThread: ExecutionThread
-
-    @Mock
-    lateinit var mockSubscribeThread: SubscribeThread
 
     @Before
     fun setup() {
         MockitoAnnotations.initMocks(this)
-        mClearAirports = ClearAirports(mockDataRepository, mockSubscribeThread, mockExecutionThread)
+        mClearAirports = ClearAirports(mockDataRepository)
     }
 
     @Test

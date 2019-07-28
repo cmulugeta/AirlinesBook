@@ -3,8 +3,6 @@ package me.cmulugeta.airlinesbook.domain.interactor.schedules
 import io.reactivex.Flowable
 import me.cmulugeta.airlinesbook.data.model.ScheduleEntity
 import me.cmulugeta.airlinesbook.data.repository.AirportsRepository
-import me.cmulugeta.airlinesbook.domain.executor.ExecutionThread
-import me.cmulugeta.airlinesbook.domain.executor.SubscribeThread
 import me.cmulugeta.airlinesbook.domain.interactor.base.FlowableUseCase
 import javax.inject.Inject
 
@@ -16,12 +14,9 @@ import javax.inject.Inject
  */
 
 open class GetFlightSchedules @Inject constructor(
-        private val dataRepository: AirportsRepository,
-        val subscriberThread: SubscribeThread,
-        val postExecutionThread: ExecutionThread)
-    : FlowableUseCase<List<ScheduleEntity>, GetFlightSchedules.Params?>(subscriberThread, postExecutionThread) {
-    public override fun buildUseCaseObservable(params: GetFlightSchedules.Params?): Flowable<List<ScheduleEntity>> {
-        if (params == null) throw IllegalArgumentException("Params can't be null!")
+        private val dataRepository: AirportsRepository)
+    : FlowableUseCase<List<ScheduleEntity>, GetFlightSchedules.Params>() {
+    override fun buildUseCaseObservable(params: Params): Flowable<List<ScheduleEntity>> {
         return dataRepository.getFlightSchedules(params.origin,
                 params.destination,
                 params.flightDate,
@@ -33,11 +28,5 @@ open class GetFlightSchedules @Inject constructor(
                                   val destination: String,
                                   val flightDate: String,
                                   val limit: Int,
-                                  val offset: Int) {
-        companion object {
-            fun forGetFlightSchedules(origin: String, destination: String, flightDate: String, limit: Int, offset: Int): Params {
-                return Params(origin, destination, flightDate, limit, offset)
-            }
-        }
-    }
+                                  val offset: Int)
 }
