@@ -4,6 +4,7 @@ import io.reactivex.Observable
 import me.cmulugeta.airlinesbook.data.model.AccessTokenEntity
 import me.cmulugeta.airlinesbook.data.repository.AirportsRepository
 import me.cmulugeta.airlinesbook.domain.interactor.base.ObservableUseCase
+import me.cmulugeta.airlinesbook.extensions.rx.subscribeAndObserve
 import javax.inject.Inject
 
 /**
@@ -21,7 +22,7 @@ open class GetAccessToken @Inject constructor(
                 params.clientSecret,
                 params.grantType
 
-        ).toObservable()
+        ).toObservable().subscribeAndObserve()
     }
 
     data class Params constructor(val clientId: String, val clientSecret: String, val grantType: String)

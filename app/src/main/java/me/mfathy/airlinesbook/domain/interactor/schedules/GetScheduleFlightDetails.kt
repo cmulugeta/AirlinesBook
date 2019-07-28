@@ -4,6 +4,7 @@ import io.reactivex.Flowable
 import me.cmulugeta.airlinesbook.data.model.AirportEntity
 import me.cmulugeta.airlinesbook.data.repository.AirportsRepository
 import me.cmulugeta.airlinesbook.domain.interactor.base.FlowableUseCase
+import me.cmulugeta.airlinesbook.extensions.rx.subscribeAndObserve
 import javax.inject.Inject
 
 /**
@@ -14,13 +15,14 @@ import javax.inject.Inject
  */
 open class GetScheduleFlightDetails @Inject constructor(
         private val dataRepository: AirportsRepository) : FlowableUseCase<List<AirportEntity>, GetScheduleFlightDetails.Params>() {
+
     override fun buildUseCaseObservable(params: Params): Flowable<List<AirportEntity>> {
         return dataRepository.getFlightScheduleDetails(
                 params.scheduleFlightDetails.toTypedArray(),
                 params.lang,
                 params.limit,
                 params.offset
-        )
+        ).subscribeAndObserve()
     }
 
     data class Params constructor(val scheduleFlightDetails: List<String>,
