@@ -17,6 +17,7 @@ import me.cmulugeta.airlinesbook.R
 import me.cmulugeta.airlinesbook.data.model.AirportEntity
 import me.cmulugeta.airlinesbook.exception.ErrorMessageFactory
 import me.cmulugeta.airlinesbook.injection.ViewModelFactory
+import me.cmulugeta.airlinesbook.ui.base.widgets.AbstractPagination
 import me.cmulugeta.airlinesbook.ui.state.Resource
 import me.cmulugeta.airlinesbook.ui.state.ResourceState
 import java.util.*
@@ -33,6 +34,10 @@ class SelectionActivity : AppCompatActivity() {
 
     private lateinit var mSelectionAdapter: SelectionAdapter
 
+    private var requestOnWay = false
+
+    private lateinit var scrollListener: AbstractPagination
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_selection)
@@ -43,10 +48,26 @@ class SelectionActivity : AppCompatActivity() {
 
         mSelectionAdapter = SelectionAdapter { onAirportClick(it) }
 
-        rVAirports.layoutManager = LinearLayoutManager(this)
+        val layoutManager = LinearLayoutManager(this)
+        rVAirports.layoutManager = layoutManager
         val itemDecor = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
         rVAirports.addItemDecoration(itemDecor)
         rVAirports.adapter = mSelectionAdapter
+
+        //  Fetch Airports
+        val lang = Locale.getDefault().language
+
+        scrollListener = object : AbstractPagination(layoutManager) {
+            override fun onLoadMore(currentPage: Int, totalItemCount: Int, view: View) {
+                if (!requestOnWay) {
+                    selectionViewModel.getPaginator().onNext(Pair(getCurrentPageNumber(), lang))
+                }
+            }
+        }
+
+        rVAirports.addOnScrollListener(scrollListener)
+
+
     }
 
     override fun onStart() {
@@ -60,9 +81,9 @@ class SelectionActivity : AppCompatActivity() {
                     }
                 })
 
-        //  Fetch Airports
-        val lang = Locale.getDefault().language
-        selectionViewModel.fetchAirports(lang, 100, 1)
+        //  Subscribe to pagination to receive updates
+        selectionViewModel.startPagination()
+        selectionViewModel.getPaginator().onNext(Pair(0, "en"))
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -80,7 +101,18 @@ class SelectionActivity : AppCompatActivity() {
     private fun handleAirportsResult(resource: Resource<List<AirportEntity>>) {
         when {
             resource.status == ResourceState.SUCCESS -> resource.data?.let { airports ->
-                mSelectionAdapter.mAirports = airports
+                requestOnWay = false
+                if (scrollListener.getCurrentPageNumber() == 0 && airports.isEmpty()) {
+                    txtVError.text = "No airports"
+
+                    //  UI
+                    rVAirports.visibility = View.INVISIBLE
+                    pBAirportsLoading.visibility = View.INVISIBLE
+                    txtVError.visibility = View.VISIBLE
+                    return
+                }
+
+                mSelectionAdapter.mAirports.addAll(airports)
                 mSelectionAdapter.notifyDataSetChanged()
 
                 //  UI

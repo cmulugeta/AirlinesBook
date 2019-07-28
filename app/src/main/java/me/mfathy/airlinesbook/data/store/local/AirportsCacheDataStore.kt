@@ -4,10 +4,8 @@ import io.reactivex.Completable
 import io.reactivex.Flowable
 import io.reactivex.Single
 import me.cmulugeta.airlinesbook.data.mapper.cache.AirportEntityCacheMapper
-import me.cmulugeta.airlinesbook.data.model.AccessTokenEntity
 import me.cmulugeta.airlinesbook.data.model.AirportEntity
 import me.cmulugeta.airlinesbook.data.model.ScheduleEntity
-import me.cmulugeta.airlinesbook.data.store.AirportsDataStore
 import me.cmulugeta.airlinesbook.data.store.local.db.AirportsDatabase
 import me.cmulugeta.airlinesbook.data.store.local.models.CacheConfig
 import javax.inject.Inject
@@ -82,7 +80,6 @@ open class AirportsCacheDataStore @Inject constructor(
         val currentTime = System.currentTimeMillis()
         return airportsDatabase.cacheConfigDao().getCacheConfig()
                 .onErrorReturn {
-                    it.printStackTrace()
                     CacheConfig(lastCacheTime = 0)
                 }
                 .map {
