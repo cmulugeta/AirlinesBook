@@ -3,7 +3,7 @@ package me.cmulugeta.airlinesbook.injection.modules
 import dagger.Binds
 import dagger.Module
 import me.cmulugeta.airlinesbook.data.repository.AirportsRepository
-import me.cmulugeta.airlinesbook.data.repository.AirportsRepositoryImpl
+import me.cmulugeta.airlinesbook.data.repository.AirportsDataRepository
 
 /**
  * Dagger module to provide data repository dependencies.
@@ -12,6 +12,6 @@ import me.cmulugeta.airlinesbook.data.repository.AirportsRepositoryImpl
 abstract class DataModule {
 
     @Binds
-    abstract fun bindDataRepository(dataRepository: AirportsRepositoryImpl): AirportsRepository
+    abstract fun bindDataRepository(dataDataRepository: AirportsDataRepository): AirportsRepository
 
 }
