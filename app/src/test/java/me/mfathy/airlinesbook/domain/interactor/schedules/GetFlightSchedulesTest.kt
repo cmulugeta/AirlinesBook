@@ -3,7 +3,8 @@ package me.cmulugeta.airlinesbook.domain.interactor.schedules
 import io.reactivex.Flowable
 import me.cmulugeta.airlinesbook.ImmediateSchedulerRuleUnitTests
 import me.cmulugeta.airlinesbook.data.model.ScheduleEntity
-import me.cmulugeta.airlinesbook.data.repository.AirportsRepository
+import me.cmulugeta.airlinesbook.data.repository.airports.AirportsRepository
+import me.cmulugeta.airlinesbook.data.repository.schedules.SchedulesRepository
 import me.cmulugeta.airlinesbook.factory.AirportFactory
 import me.cmulugeta.airlinesbook.factory.AirportFactory.makeGetFlightSchedulesParams
 import org.junit.Before
@@ -34,7 +35,7 @@ class GetFlightSchedulesTest {
     private lateinit var mGetFlightSchedules: GetFlightSchedules
 
     @Mock
-    lateinit var mockDataRepository: AirportsRepository
+    lateinit var mockDataRepository: SchedulesRepository
 
     @Before
     fun setup() {

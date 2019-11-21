@@ -1,4 +1,4 @@
-package me.cmulugeta.airlinesbook.data.repository
+package me.cmulugeta.airlinesbook.data.repository.schedules
 
 import io.reactivex.Flowable
 import me.cmulugeta.airlinesbook.data.model.AirportEntity

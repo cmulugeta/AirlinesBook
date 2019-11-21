@@ -1,4 +1,4 @@
-package me.cmulugeta.airlinesbook.data.repository
+package me.cmulugeta.airlinesbook.data.repository.auth
 
 import io.reactivex.Single
 import me.cmulugeta.airlinesbook.data.model.AccessTokenEntity
@@ -6,7 +6,7 @@ import me.cmulugeta.airlinesbook.data.preference.PreferenceHelper
 import me.cmulugeta.airlinesbook.data.store.AirportsDataStoreFactory
 import javax.inject.Inject
 
-class AuthDataRespository @Inject constructor(
+class AuthDataRepository @Inject constructor(
         private val factory: AirportsDataStoreFactory,
         private val preferenceHelper: PreferenceHelper
 ): AuthRepository {

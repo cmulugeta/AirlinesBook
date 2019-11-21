@@ -2,7 +2,7 @@ package me.cmulugeta.airlinesbook.domain.interactor.airports
 
 import io.reactivex.Completable
 import me.cmulugeta.airlinesbook.ImmediateSchedulerRuleUnitTests
-import me.cmulugeta.airlinesbook.data.repository.AirportsRepository
+import me.cmulugeta.airlinesbook.data.repository.airports.AirportsRepository
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test

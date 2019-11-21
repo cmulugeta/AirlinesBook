@@ -1,4 +1,4 @@
-package me.cmulugeta.airlinesbook.data.repository
+package me.cmulugeta.airlinesbook.data.repository.auth
 
 import io.reactivex.Single
 import me.cmulugeta.airlinesbook.data.model.AccessTokenEntity

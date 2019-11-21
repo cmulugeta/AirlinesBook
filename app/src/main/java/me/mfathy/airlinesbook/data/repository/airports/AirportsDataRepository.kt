@@ -1,14 +1,10 @@
-package me.cmulugeta.airlinesbook.data.repository
+package me.cmulugeta.airlinesbook.data.repository.airports
 
 import io.reactivex.Completable
-import io.reactivex.Flowable
 import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.functions.BiFunction
-import me.cmulugeta.airlinesbook.data.model.AccessTokenEntity
 import me.cmulugeta.airlinesbook.data.model.AirportEntity
-import me.cmulugeta.airlinesbook.data.model.ScheduleEntity
-import me.cmulugeta.airlinesbook.data.preference.PreferenceHelper
 import me.cmulugeta.airlinesbook.data.store.AirportsDataStoreFactory
 import javax.inject.Inject
 

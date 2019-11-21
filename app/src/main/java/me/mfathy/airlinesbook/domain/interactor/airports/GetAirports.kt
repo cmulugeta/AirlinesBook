@@ -2,7 +2,7 @@ package me.cmulugeta.airlinesbook.domain.interactor.airports
 
 import io.reactivex.Observable
 import me.cmulugeta.airlinesbook.data.model.AirportEntity
-import me.cmulugeta.airlinesbook.data.repository.AirportsRepository
+import me.cmulugeta.airlinesbook.data.repository.airports.AirportsRepository
 import me.cmulugeta.airlinesbook.domain.interactor.base.ObservableUseCase
 import javax.inject.Inject
 

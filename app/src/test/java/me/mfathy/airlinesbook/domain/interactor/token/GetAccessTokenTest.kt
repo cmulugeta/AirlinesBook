@@ -3,7 +3,8 @@ package me.cmulugeta.airlinesbook.domain.interactor.token
 import io.reactivex.Single
 import me.cmulugeta.airlinesbook.ImmediateSchedulerRuleUnitTests
 import me.cmulugeta.airlinesbook.data.model.AccessTokenEntity
-import me.cmulugeta.airlinesbook.data.repository.AirportsRepository
+import me.cmulugeta.airlinesbook.data.repository.airports.AirportsRepository
+import me.cmulugeta.airlinesbook.data.repository.auth.AuthRepository
 import me.cmulugeta.airlinesbook.factory.AirportFactory
 import me.cmulugeta.airlinesbook.factory.AirportFactory.makeAccessTokenParams
 import org.junit.Before
@@ -33,7 +34,7 @@ class GetAccessTokenTest {
     private lateinit var mGetAccessToken: GetAccessToken
 
     @Mock
-    lateinit var mockDataRepository: AirportsRepository
+    lateinit var mockDataRepository: AuthRepository
 
     @Before
     fun setup() {

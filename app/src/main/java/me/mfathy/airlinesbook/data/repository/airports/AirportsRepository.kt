@@ -1,4 +1,4 @@
-package me.cmulugeta.airlinesbook.data.repository
+package me.cmulugeta.airlinesbook.data.repository.airports
 
 import io.reactivex.Completable
 import io.reactivex.Flowable

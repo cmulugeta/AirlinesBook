@@ -3,7 +3,7 @@ package me.cmulugeta.airlinesbook.domain.interactor.airports
 import io.reactivex.Observable
 import me.cmulugeta.airlinesbook.ImmediateSchedulerRuleUnitTests
 import me.cmulugeta.airlinesbook.data.model.AirportEntity
-import me.cmulugeta.airlinesbook.data.repository.AirportsRepository
+import me.cmulugeta.airlinesbook.data.repository.airports.AirportsRepository
 import me.cmulugeta.airlinesbook.factory.AirportFactory
 import me.cmulugeta.airlinesbook.factory.AirportFactory.makeGetAirportParams
 import org.junit.Before

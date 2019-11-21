@@ -2,7 +2,7 @@ package me.cmulugeta.airlinesbook.domain.interactor.schedules
 
 import io.reactivex.Flowable
 import me.cmulugeta.airlinesbook.data.model.AirportEntity
-import me.cmulugeta.airlinesbook.data.repository.AirportsRepository
+import me.cmulugeta.airlinesbook.data.repository.airports.AirportsRepository
 import me.cmulugeta.airlinesbook.domain.interactor.base.FlowableUseCase
 import javax.inject.Inject
 

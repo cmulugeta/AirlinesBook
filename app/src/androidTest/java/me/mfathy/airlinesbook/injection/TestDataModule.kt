@@ -2,7 +2,7 @@ package me.cmulugeta.airlinesbook.injection
 
 import dagger.Module
 import dagger.Provides
-import me.cmulugeta.airlinesbook.data.repository.AirportsRepository
+import me.cmulugeta.airlinesbook.data.repository.airports.AirportsRepository
 import org.mockito.Mockito.mock
 import javax.inject.Singleton
 

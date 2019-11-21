@@ -2,7 +2,7 @@ package me.cmulugeta.airlinesbook.domain.interactor.token
 
 import io.reactivex.Observable
 import me.cmulugeta.airlinesbook.data.model.AccessTokenEntity
-import me.cmulugeta.airlinesbook.data.repository.AuthRepository
+import me.cmulugeta.airlinesbook.data.repository.auth.AuthRepository
 import me.cmulugeta.airlinesbook.domain.interactor.base.ObservableUseCase
 import me.cmulugeta.airlinesbook.extensions.rx.subscribeAndObserve
 import javax.inject.Inject
