@@ -18,7 +18,7 @@ import com.tapadoo.alerter.Alerter
 import dagger.android.AndroidInjection
 import me.cmulugeta.airlinesbook.R
 import me.cmulugeta.airlinesbook.data.model.AirportEntity
-import me.cmulugeta.airlinesbook.exception.ErrorMessageFactory
+import me.cmulugeta.airlinesbook.exceptions.ErrorMessageFactory
 import me.cmulugeta.airlinesbook.injection.ViewModelFactory
 import me.cmulugeta.airlinesbook.ui.state.Resource
 import me.cmulugeta.airlinesbook.ui.state.ResourceState

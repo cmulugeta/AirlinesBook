@@ -23,7 +23,7 @@ import me.cmulugeta.airlinesbook.R
 import me.cmulugeta.airlinesbook.data.model.AccessTokenEntity
 import me.cmulugeta.airlinesbook.data.model.AirportEntity
 import me.cmulugeta.airlinesbook.data.model.ScheduleEntity
-import me.cmulugeta.airlinesbook.exception.ErrorMessageFactory
+import me.cmulugeta.airlinesbook.exceptions.ErrorMessageFactory
 import me.cmulugeta.airlinesbook.injection.ViewModelFactory
 import me.cmulugeta.airlinesbook.ui.details.FlightDetailsActivity
 import me.cmulugeta.airlinesbook.ui.details.FlightDetailsActivity.Companion.SELECTED_SCHEDULE
