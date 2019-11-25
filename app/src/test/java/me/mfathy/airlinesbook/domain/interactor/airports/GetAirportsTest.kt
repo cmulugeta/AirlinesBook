@@ -1,7 +1,7 @@
 package me.cmulugeta.airlinesbook.domain.interactor.airports
 
 import io.reactivex.Observable
-import me.cmulugeta.airlinesbook.ImmediateSchedulerRuleUnitTests
+import me.cmulugeta.test.tools.ImmediateSchedulerRuleUnitTests
 import me.cmulugeta.airlinesbook.data.model.AirportEntity
 import me.cmulugeta.airlinesbook.data.repository.airports.AirportsRepository
 import me.cmulugeta.airlinesbook.factory.AirportFactory
@@ -29,7 +29,7 @@ class GetAirportsTest {
 
     @JvmField
     @Rule
-    val immediateSchedulerRule = ImmediateSchedulerRuleUnitTests()
+    val immediateSchedulerRule = me.cmulugeta.test.tools.ImmediateSchedulerRuleUnitTests()
 
     private lateinit var mGetAirports: GetAirports
 

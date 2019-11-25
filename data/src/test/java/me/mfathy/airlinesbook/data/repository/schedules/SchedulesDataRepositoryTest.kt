@@ -3,7 +3,6 @@ package me.cmulugeta.airlinesbook.data.repository.schedules
 import io.reactivex.Flowable
 import me.cmulugeta.airlinesbook.data.store.AirportsDataStore
 import me.cmulugeta.airlinesbook.data.store.AirportsDataStoreFactory
-import me.cmulugeta.airlinesbook.data.store.local.AirportsCache
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith

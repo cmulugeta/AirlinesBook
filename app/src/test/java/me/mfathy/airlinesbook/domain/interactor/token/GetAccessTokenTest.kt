@@ -1,9 +1,8 @@
 package me.cmulugeta.airlinesbook.domain.interactor.token
 
 import io.reactivex.Single
-import me.cmulugeta.airlinesbook.ImmediateSchedulerRuleUnitTests
+import me.cmulugeta.test.tools.ImmediateSchedulerRuleUnitTests
 import me.cmulugeta.airlinesbook.data.model.AccessTokenEntity
-import me.cmulugeta.airlinesbook.data.repository.airports.AirportsRepository
 import me.cmulugeta.airlinesbook.data.repository.auth.AuthRepository
 import me.cmulugeta.airlinesbook.factory.AirportFactory
 import me.cmulugeta.airlinesbook.factory.AirportFactory.makeAccessTokenParams
@@ -29,7 +28,7 @@ class GetAccessTokenTest {
 
     @JvmField
     @Rule
-    val immediateSchedulerRule = ImmediateSchedulerRuleUnitTests()
+    val immediateSchedulerRule = me.cmulugeta.test.tools.ImmediateSchedulerRuleUnitTests()
 
     private lateinit var mGetAccessToken: GetAccessToken
 

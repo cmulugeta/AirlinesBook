@@ -1,7 +1,7 @@
 package me.cmulugeta.airlinesbook.domain.interactor.airports
 
 import io.reactivex.Completable
-import me.cmulugeta.airlinesbook.ImmediateSchedulerRuleUnitTests
+import me.cmulugeta.test.tools.ImmediateSchedulerRuleUnitTests
 import me.cmulugeta.airlinesbook.data.repository.airports.AirportsRepository
 import org.junit.Before
 import org.junit.Rule
@@ -24,7 +24,7 @@ class ClearAirportsTest {
 
     @JvmField
     @Rule
-    val immediateSchedulerRule = ImmediateSchedulerRuleUnitTests()
+    val immediateSchedulerRule = me.cmulugeta.test.tools.ImmediateSchedulerRuleUnitTests()
 
     private lateinit var mClearAirports: ClearAirports
 

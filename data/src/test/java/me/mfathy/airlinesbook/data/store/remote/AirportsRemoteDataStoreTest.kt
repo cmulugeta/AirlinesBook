@@ -2,7 +2,6 @@ package me.cmulugeta.airlinesbook.data.store.remote
 
 import dagger.Lazy
 import io.reactivex.Single
-import me.cmulugeta.airlinesbook.any
 import me.cmulugeta.airlinesbook.data.mapper.remote.AccessTokenEntityNetworkMapper
 import me.cmulugeta.airlinesbook.data.mapper.remote.AirportEntityNetworkMapper
 import me.cmulugeta.airlinesbook.data.mapper.remote.ScheduleEntityNetworkMapper
@@ -217,7 +216,7 @@ class AirportsRemoteDataStoreTest {
     }
 
     private fun stubAccessTokenEntityNetworkMapperMapFromModel(entity: AccessTokenEntity) {
-        `when`(mockAccessMapper.mapToEntity(any())).thenReturn(entity)
+        `when`(mockAccessMapper.mapToEntity(me.cmulugeta.test.tools.any())).thenReturn(entity)
     }
 
     private fun stubNetworkUtils() {

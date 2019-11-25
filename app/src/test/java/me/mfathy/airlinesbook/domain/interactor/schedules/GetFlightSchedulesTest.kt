@@ -1,9 +1,8 @@
 package me.cmulugeta.airlinesbook.domain.interactor.schedules
 
 import io.reactivex.Flowable
-import me.cmulugeta.airlinesbook.ImmediateSchedulerRuleUnitTests
+import me.cmulugeta.test.tools.ImmediateSchedulerRuleUnitTests
 import me.cmulugeta.airlinesbook.data.model.ScheduleEntity
-import me.cmulugeta.airlinesbook.data.repository.airports.AirportsRepository
 import me.cmulugeta.airlinesbook.data.repository.schedules.SchedulesRepository
 import me.cmulugeta.airlinesbook.factory.AirportFactory
 import me.cmulugeta.airlinesbook.factory.AirportFactory.makeGetFlightSchedulesParams
@@ -30,7 +29,7 @@ class GetFlightSchedulesTest {
 
     @JvmField
     @Rule
-    val immediateSchedulerRule = ImmediateSchedulerRuleUnitTests()
+    val immediateSchedulerRule = me.cmulugeta.test.tools.ImmediateSchedulerRuleUnitTests()
 
     private lateinit var mGetFlightSchedules: GetFlightSchedules
 
