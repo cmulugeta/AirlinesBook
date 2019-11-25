@@ -1,4 +1,4 @@
-package me.cmulugeta.airlinesbook
+package me.cmulugeta.test.tools
 
 import io.reactivex.Scheduler
 import io.reactivex.android.plugins.RxAndroidPlugins

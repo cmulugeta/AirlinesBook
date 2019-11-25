@@ -1,4 +1,4 @@
-package me.cmulugeta.airlinesbook
+package me.cmulugeta.test.tools
 
 import org.mockito.ArgumentCaptor
 import org.mockito.Mockito
