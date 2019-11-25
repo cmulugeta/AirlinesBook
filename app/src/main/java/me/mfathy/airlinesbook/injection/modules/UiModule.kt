@@ -2,9 +2,9 @@ package me.cmulugeta.airlinesbook.injection.modules
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import me.cmulugeta.airlinesbook.ui.details.FlightDetailsActivity
-import me.cmulugeta.airlinesbook.ui.search.SearchFlightsActivity
-import me.cmulugeta.airlinesbook.ui.select.SelectionActivity
+import me.cmulugeta.airlinesbook.features.details.FlightDetailsActivity
+import me.cmulugeta.airlinesbook.features.search.SearchFlightsActivity
+import me.cmulugeta.airlinesbook.features.select.SelectionActivity
 
 /**
  * Dagger module to provide UI and activities dependencies.

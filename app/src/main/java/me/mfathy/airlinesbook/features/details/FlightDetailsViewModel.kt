@@ -1,13 +1,13 @@
-package me.cmulugeta.airlinesbook.ui.details
+package me.cmulugeta.airlinesbook.features.details
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import io.reactivex.subscribers.DisposableSubscriber
 import me.cmulugeta.airlinesbook.data.model.AirportEntity
 import me.cmulugeta.airlinesbook.domain.interactor.schedules.GetScheduleFlightDetails
-import me.cmulugeta.airlinesbook.ui.base.BaseViewModel
-import me.cmulugeta.airlinesbook.ui.state.Resource
-import me.cmulugeta.airlinesbook.ui.state.ResourceState
+import me.cmulugeta.airlinesbook.features.base.BaseViewModel
+import me.cmulugeta.airlinesbook.features.state.Resource
+import me.cmulugeta.airlinesbook.features.state.ResourceState
 import javax.inject.Inject
 
 /**

@@ -1,4 +1,4 @@
-package me.cmulugeta.airlinesbook.ui.state
+package me.cmulugeta.airlinesbook.features.state
 
 
 /**

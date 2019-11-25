@@ -1,4 +1,4 @@
-package me.cmulugeta.airlinesbook.ui.select
+package me.cmulugeta.airlinesbook.features.select
 
 import android.view.LayoutInflater
 import android.view.View

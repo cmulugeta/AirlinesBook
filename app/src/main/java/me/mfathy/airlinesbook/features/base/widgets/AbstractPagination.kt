@@ -1,4 +1,4 @@
-package me.cmulugeta.airlinesbook.ui.base.widgets
+package me.cmulugeta.airlinesbook.features.base.widgets
 
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager

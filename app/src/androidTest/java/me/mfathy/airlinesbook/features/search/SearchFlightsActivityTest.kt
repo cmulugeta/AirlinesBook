@@ -1,4 +1,4 @@
-package me.cmulugeta.airlinesbook.ui.search
+package me.cmulugeta.airlinesbook.features.search
 
 
 import androidx.test.espresso.Espresso.onView

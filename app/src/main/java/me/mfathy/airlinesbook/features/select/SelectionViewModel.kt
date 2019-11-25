@@ -1,4 +1,4 @@
-package me.cmulugeta.airlinesbook.ui.select
+package me.cmulugeta.airlinesbook.features.select
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -8,9 +8,9 @@ import me.cmulugeta.airlinesbook.data.model.AirportEntity
 import me.cmulugeta.airlinesbook.domain.interactor.airports.GetAirports
 import me.cmulugeta.airlinesbook.extensions.rx.observeMainThread
 import me.cmulugeta.airlinesbook.extensions.rx.subscribeAndObserve
-import me.cmulugeta.airlinesbook.ui.base.BaseViewModel
-import me.cmulugeta.airlinesbook.ui.state.Resource
-import me.cmulugeta.airlinesbook.ui.state.ResourceState
+import me.cmulugeta.airlinesbook.features.base.BaseViewModel
+import me.cmulugeta.airlinesbook.features.state.Resource
+import me.cmulugeta.airlinesbook.features.state.ResourceState
 import javax.inject.Inject
 
 /**

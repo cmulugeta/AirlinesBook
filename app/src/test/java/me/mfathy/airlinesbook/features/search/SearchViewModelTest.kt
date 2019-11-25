@@ -1,19 +1,15 @@
-package me.cmulugeta.airlinesbook.ui.search
+package me.cmulugeta.airlinesbook.features.search
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import io.reactivex.observers.DisposableObserver
 import io.reactivex.subscribers.DisposableSubscriber
-import me.cmulugeta.test.tools.ImmediateSchedulerRuleUnitTests
-import me.cmulugeta.test.tools.any
-import me.cmulugeta.test.tools.argumentCaptor
-import me.cmulugeta.test.tools.capture
 import me.cmulugeta.airlinesbook.data.model.AccessTokenEntity
 import me.cmulugeta.airlinesbook.data.model.ScheduleEntity
 import me.cmulugeta.airlinesbook.domain.interactor.schedules.GetFlightSchedules
 import me.cmulugeta.airlinesbook.domain.interactor.token.GetAccessToken
 import me.cmulugeta.airlinesbook.factory.AirportFactory
 import me.cmulugeta.airlinesbook.factory.DataFactory
-import me.cmulugeta.airlinesbook.ui.state.ResourceState
+import me.cmulugeta.airlinesbook.features.state.ResourceState
 import org.junit.Assert
 import org.junit.Rule
 import org.junit.Test

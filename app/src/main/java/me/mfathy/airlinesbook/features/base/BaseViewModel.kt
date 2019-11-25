@@ -1,4 +1,4 @@
-package me.cmulugeta.airlinesbook.ui.base
+package me.cmulugeta.airlinesbook.features.base
 
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable

@@ -1,4 +1,4 @@
-package me.cmulugeta.airlinesbook.ui.search
+package me.cmulugeta.airlinesbook.features.search
 
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
@@ -10,7 +10,7 @@ import android.view.View
 import android.widget.DatePicker
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.tapadoo.alerter.Alerter
@@ -25,14 +25,14 @@ import me.cmulugeta.airlinesbook.data.model.AirportEntity
 import me.cmulugeta.airlinesbook.data.model.ScheduleEntity
 import me.cmulugeta.airlinesbook.exceptions.ErrorMessageFactory
 import me.cmulugeta.airlinesbook.injection.ViewModelFactory
-import me.cmulugeta.airlinesbook.ui.details.FlightDetailsActivity
-import me.cmulugeta.airlinesbook.ui.details.FlightDetailsActivity.Companion.SELECTED_SCHEDULE
-import me.cmulugeta.airlinesbook.ui.select.SelectionActivity
-import me.cmulugeta.airlinesbook.ui.select.SelectionActivity.Companion.PICK_DESTINATION_AIRPORT_REQUEST
-import me.cmulugeta.airlinesbook.ui.select.SelectionActivity.Companion.PICK_ORIGIN_AIRPORT_REQUEST
-import me.cmulugeta.airlinesbook.ui.select.SelectionActivity.Companion.SELECTED_AIRPORT_RESULT_KEY
-import me.cmulugeta.airlinesbook.ui.state.Resource
-import me.cmulugeta.airlinesbook.ui.state.ResourceState
+import me.cmulugeta.airlinesbook.features.details.FlightDetailsActivity
+import me.cmulugeta.airlinesbook.features.details.FlightDetailsActivity.Companion.SELECTED_SCHEDULE
+import me.cmulugeta.airlinesbook.features.select.SelectionActivity
+import me.cmulugeta.airlinesbook.features.select.SelectionActivity.Companion.PICK_DESTINATION_AIRPORT_REQUEST
+import me.cmulugeta.airlinesbook.features.select.SelectionActivity.Companion.PICK_ORIGIN_AIRPORT_REQUEST
+import me.cmulugeta.airlinesbook.features.select.SelectionActivity.Companion.SELECTED_AIRPORT_RESULT_KEY
+import me.cmulugeta.airlinesbook.features.state.Resource
+import me.cmulugeta.airlinesbook.features.state.ResourceState
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
@@ -62,7 +62,7 @@ class SearchFlightsActivity : AppCompatActivity(), DatePickerListener {
 
         flightDate.setText(getDateString(Date()))
 
-        searchViewModel = ViewModelProviders.of(this, viewModelFactory)
+        searchViewModel = ViewModelProvider(this, viewModelFactory)
                 .get(SearchViewModel::class.java)
 
         buttonSearchFlights.setOnClickListener {
@@ -235,7 +235,7 @@ class SearchFlightsActivity : AppCompatActivity(), DatePickerListener {
         return format.format(date)
     }
 
-    fun showDatePickerDialog(v: View) {
+    fun showDatePickerDialog(@Suppress("UNUSED_PARAMETER") v: View) {
         val newFragment = DatePickerFragment()
         newFragment.listener = this
         newFragment.show(supportFragmentManager, "datePicker")

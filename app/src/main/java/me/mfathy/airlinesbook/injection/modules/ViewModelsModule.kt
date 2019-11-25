@@ -7,9 +7,9 @@ import dagger.MapKey
 import dagger.Module
 import dagger.multibindings.IntoMap
 import me.cmulugeta.airlinesbook.injection.ViewModelFactory
-import me.cmulugeta.airlinesbook.ui.details.FlightDetailsViewModel
-import me.cmulugeta.airlinesbook.ui.search.SearchViewModel
-import me.cmulugeta.airlinesbook.ui.select.SelectionViewModel
+import me.cmulugeta.airlinesbook.features.details.FlightDetailsViewModel
+import me.cmulugeta.airlinesbook.features.search.SearchViewModel
+import me.cmulugeta.airlinesbook.features.select.SelectionViewModel
 import kotlin.reflect.KClass
 
 /**
