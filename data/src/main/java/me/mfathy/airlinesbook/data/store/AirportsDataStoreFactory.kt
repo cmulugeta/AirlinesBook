@@ -2,6 +2,9 @@ package me.cmulugeta.airlinesbook.data.store
 
 import me.cmulugeta.airlinesbook.data.store.local.AirportsCache
 import me.cmulugeta.airlinesbook.data.store.local.AirportsCacheDataStore
+import me.cmulugeta.airlinesbook.data.store.memory.AuthMemoryStore
+import me.cmulugeta.airlinesbook.data.store.memory.MemoryCache
+import me.cmulugeta.airlinesbook.data.store.memory.models.InMemoryToken
 import me.cmulugeta.airlinesbook.data.store.remote.AirportsRemote
 import me.cmulugeta.airlinesbook.data.store.remote.AirportsRemoteDataStore
 import javax.inject.Inject
@@ -14,6 +17,7 @@ import javax.inject.Inject
  * object.
  */
 open class AirportsDataStoreFactory @Inject constructor(
+        private val memoryDataStore: AuthMemoryStore,
         private val cacheDataStore: AirportsCacheDataStore,
         private val remoteDataStore: AirportsRemoteDataStore) {
 
@@ -31,5 +35,9 @@ open class AirportsDataStoreFactory @Inject constructor(
 
     open fun getRemoteDataStore(): AirportsRemote {
         return remoteDataStore
+    }
+
+    open fun getMemoryDataStore(): MemoryCache{
+        return memoryDataStore
     }
 }

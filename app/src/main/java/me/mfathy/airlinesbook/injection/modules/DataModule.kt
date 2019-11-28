@@ -8,10 +8,12 @@ import me.cmulugeta.airlinesbook.data.repository.auth.AuthDataRepository
 import me.cmulugeta.airlinesbook.data.repository.auth.AuthRepository
 import me.cmulugeta.airlinesbook.data.repository.schedules.SchedulesDataRepository
 import me.cmulugeta.airlinesbook.data.repository.schedules.SchedulesRepository
+import javax.inject.Singleton
 
 /**
  * Dagger module to provide data repository dependencies.
  */
+
 @Module
 abstract class DataModule {
 
