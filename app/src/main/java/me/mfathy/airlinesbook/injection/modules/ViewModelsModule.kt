@@ -6,7 +6,7 @@ import dagger.Binds
 import dagger.MapKey
 import dagger.Module
 import dagger.multibindings.IntoMap
-import me.cmulugeta.airlinesbook.injection.ViewModelFactory
+import me.cmulugeta.airlinesbook.injection.factories.ViewModelFactory
 import me.cmulugeta.airlinesbook.features.details.FlightDetailsViewModel
 import me.cmulugeta.airlinesbook.features.search.SearchViewModel
 import me.cmulugeta.airlinesbook.features.select.SelectionViewModel

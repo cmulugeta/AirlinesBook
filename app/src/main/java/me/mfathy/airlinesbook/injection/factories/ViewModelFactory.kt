@@ -1,4 +1,4 @@
-package me.cmulugeta.airlinesbook.injection
+package me.cmulugeta.airlinesbook.injection.factories
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

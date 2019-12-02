@@ -18,13 +18,12 @@ import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_search_flights.*
 import kotlinx.android.synthetic.main.bottom_sheet_search_flights.*
 import kotlinx.android.synthetic.main.content_search_flights.*
-import me.cmulugeta.airlinesbook.BuildConfig
 import me.cmulugeta.airlinesbook.R
 import me.cmulugeta.airlinesbook.data.model.AccessTokenEntity
 import me.cmulugeta.airlinesbook.data.model.AirportEntity
 import me.cmulugeta.airlinesbook.data.model.ScheduleEntity
 import me.cmulugeta.airlinesbook.exceptions.ErrorMessageFactory
-import me.cmulugeta.airlinesbook.injection.ViewModelFactory
+import me.cmulugeta.airlinesbook.injection.factories.ViewModelFactory
 import me.cmulugeta.airlinesbook.features.details.FlightDetailsActivity
 import me.cmulugeta.airlinesbook.features.details.FlightDetailsActivity.Companion.SELECTED_SCHEDULE
 import me.cmulugeta.airlinesbook.features.select.SelectionActivity

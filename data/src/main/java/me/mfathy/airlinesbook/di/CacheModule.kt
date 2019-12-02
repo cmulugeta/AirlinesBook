@@ -1,4 +1,4 @@
-package me.cmulugeta.airlinesbook.injection.modules
+package me.cmulugeta.airlinesbook.di
 
 import android.app.Application
 import dagger.Binds
